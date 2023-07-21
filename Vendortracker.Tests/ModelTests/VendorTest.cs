@@ -46,5 +46,22 @@ namespace VendorTracker.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllVendors()
+    {
+      //Arrange
+      string vendor01 = "Shelly's Bakery";
+      string vendor02 = "Breaking Bread";
+      Vendor newVendor1 = new Vendor(vendor01);
+      Vendor newVendor2 = new Vendor(vendor02);
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+
+      //Act
+      List<Vendor> result = Category.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
