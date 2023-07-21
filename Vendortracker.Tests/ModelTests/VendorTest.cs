@@ -58,7 +58,7 @@ namespace VendorTracker.Tests
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
       //Act
-      List<Vendor> result = Category.GetAll();
+      List<Vendor> result = Vendor.GetAll();
 
       //Assert
       CollectionAssert.AreEqual(newList, result);
