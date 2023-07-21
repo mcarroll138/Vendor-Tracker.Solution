@@ -5,7 +5,7 @@ using VendorTracker.Models;
 
 namespace VendorTracker.Controllers
 {
-  public class VendorController : Controller
+  public class VendorsController : Controller
   {
 
     [HttpGet("/vendors")]
@@ -13,6 +13,12 @@ namespace VendorTracker.Controllers
     {
       List<Vendor> allVendors = Vendor.GetAll();
       return View(allVendors);
+    }
+
+    [HttpGet("/vendors/new")]
+    public ActionResult New()
+    {
+      return View();
     }
   }
 }
