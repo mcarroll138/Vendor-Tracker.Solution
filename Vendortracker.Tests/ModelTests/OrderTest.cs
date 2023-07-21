@@ -32,7 +32,24 @@ namespace VendorTracker.Tests
 
       //Assert
       Assert.AreEqual(description, result);
-
     }
+
+    [TestMethod]
+    public void SetDescription_UpdateDescription()
+    {
+      //Arrange
+      string description = "10 punds of butter.";
+      Order newOrder = new Order(description);
+
+      //Act
+      string updatedDescription = "10 pounds of yeast";
+      newOrder.Description = updatedDescription;
+      string result = newOrder.Description;
+
+      //Assert
+      Assert.AreEqual(updatedDescription, result);
+    }
+
+
   }
 }
