@@ -19,5 +19,20 @@ namespace VendorTracker.Tests
       Order newOrder = new Order("bread");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+
+    [TestMethod]
+    public void GetOrderDescription_ReturnOrderDescription()
+    {
+      //Arrange
+      string description = "10 Loaves of Bread";
+
+      //Act
+      Order newOrder = new Order(description);
+      string result = newOrder.Description;
+
+      //Assert
+      Assert.AreEqual(description, result);
+
+    }
   }
 }
