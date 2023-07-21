@@ -41,7 +41,7 @@ namespace VendorTracker.Tests
       Vendor newVendor = new Vendor(name);
 
       //Act
-      int result = newVendor.ID;
+      int result = newVendor.Id;
 
       //Assert
       Assert.AreEqual(1, result);
@@ -95,8 +95,7 @@ namespace VendorTracker.Tests
       List<Order> result = newVendor.Orders;
 
       //Assert
-      CollectionAssert.AreEqual(newOrder, result);
-
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
