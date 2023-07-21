@@ -60,7 +60,7 @@ namespace VendorTracker.Tests
       List<Order> result = Order.GetAll();
 
       //Assert
-      CollectionAssert.AreEqual(newList, result);
+      CollectionAssert.AreEqual(newOrder, result);
 
     }
   }
