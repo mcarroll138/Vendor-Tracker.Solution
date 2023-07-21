@@ -9,21 +9,17 @@
 </head>
 
 <body>
-  @using VendorTracker.Models;
+  <h1>Add a category</h1>
+  <p>Add a category here:</p>
 
-  <h1>vendors</h1>
+  <form action="/vendors" method="post">
+    <label for="vendorName">Category name</label>
+    <input id="vendorName" name="vendorName" type="text">
+    <button type="submit">Add</button>
+  </form>
 
-  @if (@Model.Count == 0)
-  {
-    <h3>No vendors have been added yet!</h3>
-  }
-
-  @foreach (Vendor vendor in Model)
-  {
-    <h3><a href='/vendors/@vendor.Id'>@vendor.Name</a></h3>
-  }
-
-  <p><a href='/'>Back home</a></p>
+  <p><a href="/">Back to home</a></p>
+  <p><a href="/vendors">Back to vendors.</a></p>
 </body>
 
 </html>
