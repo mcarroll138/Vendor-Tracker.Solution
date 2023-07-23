@@ -39,7 +39,7 @@ namespace VendorTracker.Controllers
       return View(model);
     }
 
-    [HttpPost("/vendors/{vendorId}/items")]
+    [HttpPost("/vendors/{vendorId}/orders")]
     public ActionResult Create(int vendorId, string orderDescription)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();

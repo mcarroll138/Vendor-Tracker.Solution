@@ -9,11 +9,12 @@
 </head>
 
 <body>
-  <form action="/orders" method="post">
-    <label for="description">Add a new order</label>
-    <input id="description" name="description" type="text">
-    <button type="submit">Submit</button>
-  </form>
+  <form action="/vendors/@Model.Id/orders" method="post">
+    <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+    <label for="ordersDescription">Item Description</label>
+    <input id="ordersDescription" name="ordersDescription" type="text">
+    <button type='submit'>Add Item</button>
+
 </body>
 
 </html>
