@@ -9,12 +9,14 @@
 </head>
 
 <body>
-  <h1>Add a category</h1>
-  <p>Add a category here:</p>
+  <h1>Add a vendor</h1>
+  <p>Add a vendor here:</p>
 
   <form action="/vendors" method="post">
-    <label for="vendorName">Category name</label>
+    <label for="vendorName">Vendor's Name</label>
     <input id="vendorName" name="vendorName" type="text">
+    <label for="vendorDescription">Business Type</label>
+    <input id="vendorDescription" name="vendorDescription" type="text">
     <button type="submit">Add</button>
   </form>
 

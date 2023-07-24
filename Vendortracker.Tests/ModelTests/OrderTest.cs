@@ -16,7 +16,7 @@ namespace VendorTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder()
     {
-      Order newOrder = new Order("bread");
+      Order newOrder = new Order("bread", "whole wheat");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -27,7 +27,7 @@ namespace VendorTracker.Tests
       string description = "10 Loaves of Bread";
 
       //Act
-      Order newOrder = new Order(description);
+      Order newOrder = new Order("Vendor Name", description);
       string result = newOrder.Description;
 
       //Assert
@@ -39,7 +39,7 @@ namespace VendorTracker.Tests
     {
       //Arrange
       string description = "10 punds of butter.";
-      Order newOrder = new Order(description);
+      Order newOrder = new Order("Vendor Name", description);
 
       //Act
       string updatedDescription = "10 pounds of yeast";
@@ -69,8 +69,8 @@ namespace VendorTracker.Tests
       //Arrange
       string description01 = "10 Pounds of butter";
       string description02 = "2 Dozen Eggs";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
+      Order newOrder1 = new Order("Vendor 1", description01);
+      Order newOrder2 = new Order("Vendor 2", description02);
       List<Order> newOrder = new List<Order> { newOrder1, newOrder2 };
 
       //Act

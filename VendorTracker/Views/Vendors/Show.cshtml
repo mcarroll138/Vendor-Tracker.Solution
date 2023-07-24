@@ -16,7 +16,7 @@
   <ol>
     @foreach (Order order in @Model["orders"])
     {
-      <li>@order.Description</li>
+      <li>@order.Name @order.Description</li>
     }
   </ol>
 

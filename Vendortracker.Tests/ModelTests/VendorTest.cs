@@ -16,7 +16,7 @@ namespace VendorTracker.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor()
     {
-      Vendor newVendor = new Vendor("test vendor");
+      Vendor newVendor = new Vendor("vendor", "description");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
@@ -24,21 +24,24 @@ namespace VendorTracker.Tests
     public void GetName_ReturnsName_String()
     {
       //Arrange
-      string name = "test vendor";
-      Vendor newVendor = new Vendor(name);
+      string name = "vendor";
+      string description = "description";
+      Vendor newVendor = new Vendor(name, description);
 
       //Act
       string result = newVendor.Name;
+      string result2 = newVendor.Description;
 
       //Assert
       Assert.AreEqual(name, result);
+      Assert.AreEqual(description, result2);
     }
     [TestMethod]
     public void GetId_ReturnsVendorID()
     {
       //Arrange
-      string name = "test vendor";
-      Vendor newVendor = new Vendor(name);
+      string name = "vendor";
+      Vendor newVendor = new Vendor(name, "description");
 
       //Act
       int result = newVendor.Id;
@@ -53,8 +56,8 @@ namespace VendorTracker.Tests
       //Arrange
       string vendor01 = "Shelly's Bakery";
       string vendor02 = "Breaking Bread";
-      Vendor newVendor1 = new Vendor(vendor01);
-      Vendor newVendor2 = new Vendor(vendor02);
+      Vendor newVendor1 = new Vendor(vendor01, "description");
+      Vendor newVendor2 = new Vendor(vendor02, "description");
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
       //Act
@@ -70,8 +73,8 @@ namespace VendorTracker.Tests
       //Arrange
       string vendor01 = "Shelly's Bakery";
       string vendor02 = "Breaking Bread";
-      Vendor newVendor1 = new Vendor(vendor01);
-      Vendor newVendor2 = new Vendor(vendor02);
+      Vendor newVendor1 = new Vendor(vendor01, "description");
+      Vendor newVendor2 = new Vendor(vendor02, "description");
 
       //Act
       Vendor result = Vendor.Find(2);
@@ -85,10 +88,10 @@ namespace VendorTracker.Tests
     {
       //Arrange
       string description = "100 Loaves of bread.";
-      Order newOrder = new Order(description);
+      Order newOrder = new Order("Vendor Name", description);
       List<Order> newList = new List<Order> { newOrder };
       string name = "Shelly's Bakery";
-      Vendor newVendor = new Vendor(name);
+      Vendor newVendor = new Vendor(name, "description");
       newVendor.AddOrder(newOrder);
 
       //Act
